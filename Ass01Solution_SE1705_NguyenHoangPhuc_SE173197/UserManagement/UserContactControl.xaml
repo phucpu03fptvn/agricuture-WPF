@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.UserManagement.UserContactControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.UserManagement"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Image Source="pack://application:,,,/Assets/loginBackground.jpg" Stretch="UniformToFill" />
+        <Rectangle Fill="#80000000"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+            <TextBlock Text="LIÊN HỆ VỚI CHÚNG TÔI" FontSize="32" FontWeight="Bold" Foreground="White" Margin="0,20,0,10" HorizontalAlignment="Center"/>
+            <TextBlock Text="+ Địa chỉ: 42 Lê Trọng Tấn, An Bình, Dĩ An, Bình Dương" FontSize="18" Foreground="White"/>
+            <TextBlock Text="+ Email: phucpu03@gmail.com" FontSize="18" Foreground="White" Margin="0,10,0,0"/>
+            <TextBlock Text="+ Điện thoại: +84 366 658 711" FontSize="18" Foreground="White" Margin="0,10,0,0"/>
+            <TextBlock Text="+ Chúng tôi rất vui lòng nhận phản hồi từ bạn!" FontSize="18" Foreground="White" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

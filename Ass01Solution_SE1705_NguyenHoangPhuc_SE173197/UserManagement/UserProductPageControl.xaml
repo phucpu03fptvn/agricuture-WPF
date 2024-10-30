@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.UserManagement.ProductPageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.UserManagement"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid x:Name="UserProductPage">
+        <Image Source="pack://application:,,,/Assets/loginBackground.jpg" Stretch="UniformToFill" />
+        <Rectangle Fill="#80000000" />
+        <StackPanel Margin="10">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10">
+                <TextBox x:Name="txtSearchBox" 
+                         Height="35" 
+                         Width="250" 
+                         Margin="0,0,5,0" 
+                         TextWrapping="Wrap" 
+                         BorderBrush="#B0B0B0" 
+                         BorderThickness="1" 
+                         Padding="5"/>
+                <Button x:Name="btnSearch" 
+                        Content="Search" 
+                        Height="35" 
+                        Width="99" 
+                        Background="DarkGreen" 
+                        Foreground="White" 
+                        FontSize="16" 
+                        Click="btnSearch_Click"/>
+            </StackPanel>
+            <Border CornerRadius="10" BorderBrush="#B0B0B0" BorderThickness="1" Background="#f5f5f5" Height="375">
+                <DataGrid x:Name="dgAgricultureProduct" 
+                          Margin="0,9,0,9" 
+                          AutoGenerateColumns="False" 
+                          Background="White" 
+                          GridLinesVisibility="None" 
+                          RowBackground="#f9f9f9" 
+                          AlternatingRowBackground="#e8f5e9" 
+                          SelectionUnit="FullRow"
+                          SelectionMode="Single">
+                    <DataGrid.Columns>
+                        <!-- Cột hiển thị hình ảnh Thumbnail -->
+                        <DataGridTemplateColumn Header="Thumbnail" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Thumbnail}" 
+                                           Width="100" 
+                                           Height="100" 
+                                           Stretch="UniformToFill"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!-- Cột hiển thị tên sản phẩm -->
+                        <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" Width="200"/>
+                        <DataGridTextColumn Header="Category" Binding="{Binding CategoryName}" Width="200"/>
+                        <!-- Cột hiển thị giá -->
+                        <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100"/>
+                        <!-- Cột hiển thị số lượng tồn kho -->
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding StockQuantity}" Width="100"/>
+
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="100" />
+                    </DataGrid.Columns>
+
+                    <DataGrid.Resources>
+                        <!-- Style cho ô DataGrid -->
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="DarkGreen"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Height" Value="50"/>
+                        </Style>
+                        <!-- Style cho tiêu đề của DataGrid -->
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#388e3c"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

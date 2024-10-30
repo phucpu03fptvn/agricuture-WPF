@@ -1,0 +1,93 @@
+﻿<Window x:Class="Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.AdminAgricultureManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Account Management" Height="600" Width="900"
+        Background="#E8F5E9" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Main Content -->
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Background="#8BC34A" Padding="10">
+            <TextBlock Text="Nông Sản - Quản Lý Tài Khoản" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <!-- DataGrid Column -->
+                <ColumnDefinition Width="1*"/>
+                <!-- Form Column -->
+            </Grid.ColumnDefinitions>
+
+            <!-- DataGrid -->
+            <DataGrid x:Name="dgUser" 
+                      Grid.Column="0"
+                      AutoGenerateColumns="False" 
+                      Margin="10" 
+                      Background="#FFFFFF" 
+                      AlternatingRowBackground="#F1F8E9" 
+                      SelectionChanged="dgUser_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding UserId}" Width="*"/>
+                    <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                    <DataGridTextColumn Header="Số Điện Thoại" Binding="{Binding PhoneNumber}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Form Section -->
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Thông Tin Tài Khoản" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Foreground="#333333" 
+                           Margin="0,0,0,10"/>
+
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="User ID" Foreground="#555555"/>
+                    <TextBox x:Name="txtUserId" IsReadOnly="True" Height="30"/>
+                </StackPanel>
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="Tên" Foreground="#555555"/>
+                    <TextBox x:Name="txtFullName" Height="30"/>
+                </StackPanel>
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="Email" Foreground="#555555"/>
+                    <TextBox x:Name="txtEmail" Height="30"/>
+                </StackPanel>
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="Số Điện Thoại" Foreground="#555555"/>
+                    <TextBox x:Name="txtPhone" Height="30"/>
+                </StackPanel>
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="Địa Chỉ" Foreground="#555555"/>
+                    <TextBox x:Name="txtAddress" Height="30"/>
+                </StackPanel>
+                <StackPanel Margin="0,5,0,5">
+                    <Label Content="Vai Trò" Foreground="#555555"/>
+                    <ComboBox x:Name="cbRole" Height="30"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <Button x:Name="btnCreate" Content="Tạo Mới" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" Click="btnCreate_Click_1"/>
+                    <Button x:Name="btnUpdate" Content="Cập Nhật" Width="80" Height="30" Margin="5" Background="#FFC107" Foreground="Black" Click="btnUpdate_Click"/>
+                    <Button x:Name="btnDelete" Content="Xóa" Width="80" Height="30" Margin="5" Background="#F44336" Foreground="White" Click="btnDelete_Click_1"/>
+                    <Button x:Name="btnClose" Content="Đóng" Width="80" Height="30" Margin="5" Background="#9E9E9E" Foreground="White" Click="btnClose_Click_1"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
