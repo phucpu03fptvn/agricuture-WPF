@@ -33,7 +33,6 @@ Icon?
 # Tệp tài nguyên
 #*.csproj
 *.unityproj
-*.sln
 *.suo
 *.user
 *.userprefs
