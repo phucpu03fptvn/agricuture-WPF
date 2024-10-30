@@ -49,8 +49,8 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
            CreateAgricultureProduct createAgricultureProduct = new CreateAgricultureProduct();
+            createAgricultureProduct.AgricultureCreated += LoadInitData;
             createAgricultureProduct.ShowDialog();
-            this.Close();
         }
 
         private void dgAgricultureProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)

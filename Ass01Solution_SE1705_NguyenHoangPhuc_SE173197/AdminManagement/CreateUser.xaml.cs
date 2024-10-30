@@ -23,6 +23,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.AdminManagement
     {
         private IUserService _userService;
         private IUserRoleService _roleService;
+        public event Action UserCreated;
         public CreateUser()
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.AdminManagement
             if (isSuccess)
             {
                 MessageBox.Show("Người dùng đã được tạo thành công.");
+                UserCreated?.Invoke();
                 this.Close();
             }
             else

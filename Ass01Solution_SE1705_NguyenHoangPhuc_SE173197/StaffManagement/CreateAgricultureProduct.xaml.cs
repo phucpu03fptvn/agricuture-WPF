@@ -23,6 +23,8 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.StaffManagement
     {
         private IAgricultureProductService _agricultureProductService;
         private IAgricultureCategoryService _agricultureCategoryService;
+        public event Action AgricultureCreated;
+
         public CreateAgricultureProduct()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.StaffManagement
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            StaffAgricultureManagement staffAgricultureManagement = new StaffAgricultureManagement();
+            
             AgricultureProduct agricultureProduct = new AgricultureProduct();
             agricultureProduct.ProductName = txtAgricultureName.Text;
             if (decimal.TryParse(txtAgriculturePrice.Text, out decimal price))
@@ -51,13 +53,13 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197.StaffManagement
             {
                 MessageBox.Show("Add Successfully");
                 this.Close();
-                staffAgricultureManagement.Show();
+                AgricultureCreated?.Invoke();
             }
             else
             {
                 MessageBox.Show("Fail to add");
                 this.Close();
-                staffAgricultureManagement.Show();
+                
             };
         }
 

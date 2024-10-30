@@ -42,15 +42,15 @@
                       SelectionChanged="dgUser_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding UserId}" Width="*"/>
-                    <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="FullName" Binding="{Binding Name}" Width="*"/>
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
-                    <DataGridTextColumn Header="Số Điện Thoại" Binding="{Binding PhoneNumber}" Width="*"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
 
             <!-- Form Section -->
             <StackPanel Grid.Column="1" Margin="10">
-                <TextBlock Text="Thông Tin Tài Khoản" 
+                <TextBlock Text="User Information" 
                            FontSize="20" 
                            FontWeight="Bold" 
                            Foreground="#333333" 
@@ -61,7 +61,7 @@
                     <TextBox x:Name="txtUserId" IsReadOnly="True" Height="30"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,0,5">
-                    <Label Content="Tên" Foreground="#555555"/>
+                    <Label Content="Full Name" Foreground="#555555"/>
                     <TextBox x:Name="txtFullName" Height="30"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,0,5">
@@ -69,23 +69,23 @@
                     <TextBox x:Name="txtEmail" Height="30"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,0,5">
-                    <Label Content="Số Điện Thoại" Foreground="#555555"/>
+                    <Label Content="Phone Number" Foreground="#555555"/>
                     <TextBox x:Name="txtPhone" Height="30"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,0,5">
-                    <Label Content="Địa Chỉ" Foreground="#555555"/>
+                    <Label Content="Address" Foreground="#555555"/>
                     <TextBox x:Name="txtAddress" Height="30"/>
                 </StackPanel>
                 <StackPanel Margin="0,5,0,5">
-                    <Label Content="Vai Trò" Foreground="#555555"/>
+                    <Label Content="Role" Foreground="#555555"/>
                     <ComboBox x:Name="cbRole" Height="30"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                    <Button x:Name="btnCreate" Content="Tạo Mới" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" Click="btnCreate_Click_1"/>
-                    <Button x:Name="btnUpdate" Content="Cập Nhật" Width="80" Height="30" Margin="5" Background="#FFC107" Foreground="Black" Click="btnUpdate_Click"/>
-                    <Button x:Name="btnDelete" Content="Xóa" Width="80" Height="30" Margin="5" Background="#F44336" Foreground="White" Click="btnDelete_Click_1"/>
-                    <Button x:Name="btnClose" Content="Đóng" Width="80" Height="30" Margin="5" Background="#9E9E9E" Foreground="White" Click="btnClose_Click_1"/>
+                    <Button x:Name="btnCreate" Content="Create" Width="80" Height="30" Margin="5" Background="#4CAF50" Foreground="White" Click="btnCreate_Click_1"/>
+                    <Button x:Name="btnUpdate" Content="Update" Width="80" Height="30" Margin="5" Background="#FFC107" Foreground="Black" Click="btnUpdate_Click"/>
+                    <Button x:Name="btnDelete" Content="Delete" Width="80" Height="30" Margin="5" Background="#F44336" Foreground="White" Click="btnDelete_Click_1"/>
+                    <Button x:Name="btnClose" Content="Close" Width="80" Height="30" Margin="5" Background="#9E9E9E" Foreground="White" Click="btnClose_Click_1"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

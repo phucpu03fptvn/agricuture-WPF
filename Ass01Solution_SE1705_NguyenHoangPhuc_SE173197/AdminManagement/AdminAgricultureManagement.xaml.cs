@@ -73,13 +73,16 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             int userId = int.Parse(txtUserId.Text);
+            var user = _userService.GetUser(userId);
             User updatedUser = new User
             {
                 UserId = userId,
                 Name = txtFullName.Text,
+                Password = user.Password,
                 Email = txtEmail.Text,
                 Address = txtAddress.Text,
                 RoleId = (int)cbRole.SelectedValue,
+                PhoneNumber = txtPhone.Text,
             };
 
             bool isUpdated = _userService.UpdateUser(updatedUser);
@@ -87,6 +90,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197
             if (isUpdated)
             {
                 MessageBox.Show("Cập nhật người dùng thành công!");
+                this.LoadInitData();
             }
             else
             {
@@ -99,6 +103,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197
         private void btnCreate_Click_1(object sender, RoutedEventArgs e)
         {
             CreateUser createUser = new CreateUser();
+            createUser.UserCreated += LoadInitData;
             createUser.Show();
         }
 
@@ -122,7 +127,7 @@ namespace Ass01Solution_SE1705_NguyenHoangPhuc_SE173197
                 if (isSuccess)
                 {
                     MessageBox.Show("Người dùng đã được xóa thành công.");
-                    dgUser.ItemsSource = _userService.GetAllUsers();
+                    this.LoadInitData();
                 }
                 else
                 {
